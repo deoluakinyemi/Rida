@@ -1,10 +1,8 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { TrendingUp, Users, MapPin, DollarSign, Award, Zap } from "lucide-react"
 
-export default function RidaWaitlistPage() {
+export default function GoogleFormEmbedPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-white">
       {/* Header */}
@@ -120,9 +118,9 @@ export default function RidaWaitlistPage() {
         </div>
       </section>
 
-      {/* Waitlist Form CTA */}
+      {/* Embedded Google Form */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-green-50">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto">
           <Card>
             <CardHeader className="text-center">
               <CardTitle className="text-3xl text-gray-900">
@@ -132,21 +130,19 @@ export default function RidaWaitlistPage() {
                 Reserve your spot and secure your territory before it's taken.
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col items-center">
-              <p className="mb-6 text-gray-700">
-                Click the button below to fill out our quick application form and join the waitlist for your local area.
-              </p>
-              <a
-                href="https://docs.google.com/forms/d/e/YOUR_ACTUAL_FORM_ID/viewform"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block"
+            <CardContent>
+              {/* Replace this URL with your actual Google Form embed URL */}
+              <iframe
+                src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+                width="100%"
+                height="800"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                className="rounded-lg"
               >
-                <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg font-semibold">
-                  Join the Rida Distributor Waitlist Now
-                </Button>
-              </a>
-              <p className="mt-4 text-sm text-gray-500">You'll be redirected to our secure application form</p>
+                Loading…
+              </iframe>
             </CardContent>
           </Card>
         </div>
