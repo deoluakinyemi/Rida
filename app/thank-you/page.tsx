@@ -1,56 +1,77 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { CheckCircle, ArrowRight } from "lucide-react"
 
 export default function ThankYouPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center justify-center px-4">
-      <div className="max-w-2xl mx-auto text-center">
-        <Card className="border-green-200">
-          <CardHeader className="pb-8">
-            <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-              <CheckCircle className="w-8 h-8 text-green-600" />
-            </div>
-            <CardTitle className="text-4xl text-gray-900 mb-4">You're Officially on the Radar!</CardTitle>
-            <CardDescription className="text-lg text-gray-600">
-              Congratulations! You've taken the first step toward becoming a distributor of Nigeria's favorite Black
-              Shampoo haircare solution.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="bg-green-50 p-6 rounded-lg">
-              <p className="text-gray-700 leading-relaxed">
-                Our team will review your application based on your city/LGA and reach out to you with the next steps
-                for onboarding.
-              </p>
-              <p className="text-green-700 font-semibold mt-4">
-                <strong>Note:</strong> Due to high demand and location exclusivity, early action will be prioritized.
-              </p>
-            </div>
+    <div className="min-h-screen flex flex-col">
+      <header className="bg-white py-4 border-b">
+        <div className="container flex items-center justify-between">
+          <Link href="/" className="flex items-center">
+            <Image src="/rida-logo.png" alt="Rida Logo" width={120} height={60} className="h-auto" />
+          </Link>
+        </div>
+      </header>
 
-            <div className="text-center">
-              <p className="text-xl text-gray-800 font-semibold mb-2">Stay tuned — we'll be reaching out soon!</p>
-              <p className="text-gray-600">(You'll also receive an email confirming your registration.)</p>
+      <main className="flex-1 flex items-center justify-center py-12">
+        <div className="container max-w-3xl text-center px-4">
+          <div className="mb-8">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-100 text-green-600 mb-6">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
             </div>
+            <h1 className="text-4xl font-bold mb-4">You're Officially on the Radar!</h1>
+          </div>
 
-            <div className="pt-6">
-              <Link href="/opportunity">
-                <Button className="bg-green-600 hover:bg-green-700 text-white px-8 py-3">
-                  Learn More About the Opportunity
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+          <div className="prose prose-lg max-w-none">
+            <p className="text-2xl font-semibold text-green-600 mb-6">Congratulations!</p>
+            <p className="text-lg mb-4">
+              You've taken the first step toward becoming a distributor of Nigeria's favorite balm solution.
+            </p>
+            <p className="text-lg mb-4">
+              Our team will review your application based on your city/LGA and reach out to you with the next steps for
+              onboarding.
+            </p>
+            <p className="text-lg font-medium mb-4">
+              Note: Due to high demand and location exclusivity, early action will be prioritized.
+            </p>
+            <p className="text-lg mb-4">Stay tuned — we'll be reaching out soon!</p>
+            <p className="text-lg italic">(You'll also receive an email confirming your registration.)</p>
+          </div>
+
+          <div className="mt-12 space-y-4">
+            <Button asChild className="bg-green-600 hover:bg-green-700">
+              <Link href="/opportunity">Learn More About the Opportunity</Link>
+            </Button>
+            <div>
+              <Link href="/" className="text-green-600 hover:text-green-700 inline-block mt-4">
+                Return to Home
               </Link>
             </div>
+          </div>
+        </div>
+      </main>
 
-            <div className="pt-4 border-t">
-              <Link href="/" className="text-green-600 hover:text-green-700 underline">
-                ← Back to Home
-              </Link>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      <footer className="bg-gray-900 text-white py-6">
+        <div className="container text-center">
+          <div className="flex justify-center mb-4">
+            <Image src="/rida-logo.png" alt="Rida Logo" width={80} height={40} className="h-auto" />
+          </div>
+          <p>© {new Date().getFullYear()} Rida Balm Distributors. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }
